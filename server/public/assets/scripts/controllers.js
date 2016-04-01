@@ -17,6 +17,10 @@ var heroService = HeroService;
 
   $scope.heroList = $scope.data;
   console.log($scope.heroList);
+
+  $scope.deleteHero = function(hero){
+    heroService.deleteHero(hero);
+  };
 }]);
 
 

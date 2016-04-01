@@ -20,12 +20,20 @@ router.post('/postHeroDataBase', function(req, res){
       "city" : req.body.city,
       "power" : req.body.power
   });
-
   newHero.save(function(err,data){
     if(err){
       console.log(err);
     }
     res.send(data);
+  });
+});
+
+router.delete("/hero/:id", function(req,res){
+  hero.findByIdAndRemove(req.params.id, function(err,hero){
+    if(err){
+      console.log(err);
+    }
+    res.send(hero);
   });
 });
 

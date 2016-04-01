@@ -12,10 +12,15 @@ myApp.factory("HeroService", ["$http", function($http){
 
     });
   };
-
+  var deleteHero = function(hero){
+    $http.delete("/hero/"+hero._id).then(function(response){
+      getHeros();
+    });
+  };
   return{
     data: data,
     getHeros: getHeros,
-    postHero: postHero
+    postHero: postHero,
+    deleteHero: deleteHero
   }
 }]);
