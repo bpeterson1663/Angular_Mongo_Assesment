@@ -1,1 +1,8 @@
 <h2>List of Hereos</h2>
+<div ng-repeat="object in heroList.data.response">
+  <h3>Super Hero: {{object.alias}}</h3>
+  <p>First Name: {{object.first_name}}</p>
+  <p>Last Name: {{object.last_name}}</p>
+  <p>City: {{object.city}}</p>
+  <p>Power: {{object.power}}</p>
+</div>
